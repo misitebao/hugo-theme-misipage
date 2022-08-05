@@ -1,12 +1,12 @@
 baseURL = '/' 
 defaultContentLanguage = "en" #默认内容语言
-defaultContentLanguageInSubdir = false #子目录显示默认内容
 
 theme = "hugo-theme-misipage" #主题名称
 themesdir = "../../" #主题路径
 
 [languages.en]
 contentDir = 'content/en'
+copyright = ""
 hasCJKLanguage = false
 languageCode = 'en'
 languageName = 'English'
@@ -15,6 +15,7 @@ weight = 10
 
 [languages.zh-Hans]
 contentDir = 'content/zh-Hans'
+copyright = ""
 hasCJKLanguage = true
 languageCode = 'zh-Hans'
 languageName = '简体中文'
