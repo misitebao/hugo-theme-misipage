@@ -1,5 +1,6 @@
 baseURL = '/' 
-defaultContentLanguage = "en" #默认内容语言
+defaultContentLanguage = "zh-hans" #默认内容语言
+defaultContentLanguageInSubdir = true 
 
 theme = "hugo-theme-misipage" #主题名称
 themesdir = "../../" #主题路径
@@ -12,6 +13,16 @@ languageCode = 'en'
 languageName = 'English'
 title = 'My New Hugo Site'
 weight = 10
+
+[[languages.en.menus.header]]
+identifier = 'home'
+name = 'Home'
+# parent = '' # 父菜单标识
+pre = "<i class='fa fa-home'></i>"
+url = '/'
+weight = 1
+[languages.en.menus.header.params] # 自定义属性
+class = 'custome-'
 
 [languages.zh-Hans]
 contentDir = 'content/zh-Hans'
