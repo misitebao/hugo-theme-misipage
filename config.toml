@@ -1,3 +1,24 @@
 # This is the default configuration of the theme, which can be overridden by custom configuration. For specific rules, please refer to: https://gohugo.io/getting-started/configuration/#merge-configuration-from-themes
 
+# Hugo 解析文档的配置
+[markup]
+# 语法高亮设置
+[markup.highlight]
+codeFences = true
+guessSyntax = true
+lineNos = true
+lineNumbersInTable = true
+noClasses = false
+
+[markup.goldmark.extensions]
+definitionList = true
+footnote = true
+linkify = true
+strikethrough = true
+table = true
+taskList = true
+typographer = true
+[markup.goldmark.renderer]
+unsafe = true # 是否在文档中直接使用 HTML 标签
+
 [params]
