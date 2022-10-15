@@ -1,0 +1,47 @@
+<script>
+  const themeMapping = {
+    light: 'light',
+    dark: 'dark_dimmed',
+  };
+
+  const languageMapping = {
+    en: 'en',
+    'zh-Hans': 'zh-CN',
+  };
+
+  // Defaults
+  let theme = 'light';
+  let language = '{{- .Site.LanguageCode -}}';
+
+  if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    theme = 'dark';
+  } else {
+    theme = 'light';
+  }
+  {{- $giscus := .Site.Params.comment.giscus -}}
+  const giscusAttributes = {
+    src: 'https://giscus.app/client.js',
+    'data-repo': '{{- $giscus.repo -}}',
+    'data-repo-id': '{{- $giscus.repoID -}}',
+    'data-category': '{{- $giscus.category -}}',
+    'data-category-id': '{{- $giscus.categoryID -}}',
+    'data-mapping': '{{- $giscus.mapping -}}',
+    'data-strict': '{{- $giscus.strict -}}',
+    'data-reactions-enabled': '{{- $giscus.reactionsEnabled -}}',
+    'data-emit-metadata': '{{- $giscus.emitMetadata -}}',
+    'data-input-position': '{{- $giscus.inputPosition -}}',
+    'data-theme': themeMapping[theme],
+    'data-lang': languageMapping[language],
+    crossorigin: '{{- $giscus.crossOrigin -}}',
+    async: '{{- $giscus.async -}}',
+  };
+
+  const giscusScript = document.createElement('script');
+  Object.entries(giscusAttributes).forEach(([key, value]) =>
+    giscusScript.setAttribute(key, value)
+  );
+  document.body.appendChild(giscusScript);
+</script>

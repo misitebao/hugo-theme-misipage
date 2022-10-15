@@ -1,0 +1,18 @@
+<div class="video ixigua">
+  {{- if .IsNamedParams -}}
+  <iframe
+    frameborder="0"
+    src="https://www.ixigua.com/iframe/{{- .Get `id` -}}?autoplay=0&startTime=0"
+    referrerpolicy="unsafe-url"
+    allowfullscreen
+  ></iframe>
+  {{- else -}}
+
+  <iframe
+    frameborder="0"
+    src="https://www.ixigua.com/iframe/{{- .Get 0 -}}?autoplay=0&startTime=0"
+    referrerpolicy="unsafe-url"
+    allowfullscreen
+  ></iframe>
+  {{- end -}}
+</div>

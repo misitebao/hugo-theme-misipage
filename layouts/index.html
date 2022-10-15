@@ -1,16 +1,34 @@
+{{ define "head" }}
+<script type="module" crossorigin src="/assets/index.js"></script>
+<link rel="modulepreload" crossorigin href="/assets/theme.js">
+<link rel="stylesheet" href="/assets/index.css">
+{{ end }} 
+
 {{ define "main"}}
 <main class="py-24">
-  <div class="container mx-auto px-2.5 lg:px-5">
-    <div class="mx-auto w-28 h-28 rounded-full overflow-hidden bg-black">
+  <div class="container mx-auto px-2.5 lg:px-5 lg:max-w-screen-lg">
+    <div
+      class="mx-auto w-28 h-28 rounded-full overflow-hidden bg-black"
+      x-on:click="change(theme==='light'?'dark':'light')"
+    >
       <img
         src="https://cdn.jsdelivr.net/gh/misitebao/static@latest/gravatar-bg-white.png"
         alt="Misite Bao"
       />
     </div>
 
-    <article class="mx-auto my-20 max-w-none prose prose-lg">
-      {{ .Content }}
+    <article class="mx-auto my-16 max-w-none prose prose-lg dark:prose-invert">
+    {{ .Content }}
     </article>
+    
+    {{ if $.Site.Params.Comment.Enable }}
+    <!-- Comments -->
+    {{ if $.Site.Params.Comment.Giscus.Enable }}
+    <div id="giscus" class="giscus"></div>
+    {{ end }}
+    {{ end }}
   </div>
 </main>
 {{ end }}
+
+

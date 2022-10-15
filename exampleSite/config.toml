@@ -1,5 +1,5 @@
 baseURL = '/' 
-defaultContentLanguage = "zh-hans" #默认内容语言
+defaultContentLanguage = "en" #默认内容语言
 defaultContentLanguageInSubdir = true 
 
 theme = "hugo-theme-misipage" #主题名称
@@ -7,28 +7,83 @@ themesdir = "../../" #主题路径
 
 [languages.en]
 contentDir = 'content/en'
-copyright = ""
+copyright = '''
+@Copyright 2022 Misite Bao
+'''
 hasCJKLanguage = false
 languageCode = 'en'
 languageName = 'English'
-title = 'My New Hugo Site'
+title = 'MisiPage'
 weight = 10
 
 [[languages.en.menus.header]]
 identifier = 'home'
 name = 'Home'
 # parent = '' # 父菜单标识
-pre = "<i class='fa fa-home'></i>"
 url = '/'
 weight = 1
-[languages.en.menus.header.params] # 自定义属性
-class = 'custome-'
+
+[[languages.en.menus.header]]
+identifier = 'projects'
+name = 'Projects'
+# parent = '' # 父菜单标识
+url = '/projects/'
+weight = 2
+
+[[languages.en.menus.header]]
+identifier = 'sponsors'
+name = 'Sponsors'
+# parent = '' # 父菜单标识
+url = '/sponsors/'
+weight = 3
 
 [languages.zh-Hans]
 contentDir = 'content/zh-Hans'
-copyright = ""
+copyright = '''
+@Copyright 2022 米司特包 | <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" title="备案" >鄂ICP备20006255号</a >
+'''
 hasCJKLanguage = true
 languageCode = 'zh-Hans'
 languageName = '简体中文'
-title = 'My New Hugo Site'
+title = 'MisiPage'
 weight = 20
+
+[[languages.zh-Hans.menus.header]]
+identifier = 'home'
+name = '主页'
+# parent = '' # 父菜单标识
+url = '/'
+weight = 1
+
+[[languages.zh-Hans.menus.header]]
+identifier = 'projects'
+name = '项目'
+# parent = '' # 父菜单标识
+url = '/projects/'
+weight = 2
+
+[[languages.zh-Hans.menus.header]]
+identifier = 'sponsors'
+name = '赞助'
+# parent = '' # 父菜单标识
+url = '/sponsors/'
+weight = 3
+
+[params]
+[params.comment]
+enable = true
+[params.comment.giscus]
+async = ""
+category = "Comments"
+categoryID = "DIC_kwDOHIIFec4CR91_"
+crossOrigin = "anonymous"
+emitMetadata = "0"
+enable = true
+inputPosition = "bottom"
+# lang = "" # 设置 "auto" 跟随站点
+mapping = "og:title" 
+reactionsEnabled = "1" 
+repo = "misitebao/hugo-theme-misipage" 
+repoID = "R_kgDOHIIFeQ" 
+strict = "0" 
+theme = "" # 设置 "auto" 跟随站点

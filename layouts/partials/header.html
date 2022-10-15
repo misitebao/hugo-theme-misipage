@@ -1,0 +1,56 @@
+<header
+  class="fixed top-0 w-full backdrop-blur-sm bg-white/10 dark:bg-black/10"
+>
+  <div class="mobile block lg:hidden"></div>
+  <div
+    class="desktop hidden lg:block shadow-2xl shadow-indigo-300 dark:shadow-neutral-700"
+  >
+    <div
+      class="flex flex-nowrap items-center justify-between mx-auto lg:max-w-screen-xl h-14 px-2.5 lg:px-5 xl:px-6"
+    >
+      <div class="logo flex flex-nowrap items-center cursor-pointer">
+        <a href="/" class="block w-12 h-12 rounded-full overflow-hidden">
+          <img
+            src="https://cdn.jsdelivr.net/gh/misitebao/static@latest/gravatar-bg-white.png"
+            alt="Misite Bao"
+          />
+        </a>
+        <div class="mt-4 ml-1">
+          <div class="text-sm">Misite Bao</div>
+          <div class="text-xs text-slate-400">@misitebao</div>
+        </div>
+        <ul class="language flex flex-nowrap items-center ml-8">
+
+          {{ range .Translations }}
+          <li
+            class="inline-block text-xs hover:text-indigo-300 active:text-indigo-300"
+          >
+            <a href="{{ .Permalink }}" class="px-1">{{ .Language.LanguageName }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <nav class="menu">
+        <ul class="flex flex-nowrap items-center">
+          {{- range .Site.Menus.header -}} {{- $url := .URL | relLangURL -}}
+          <li class="inline-block mx-1">
+            <a
+              href="{{- $url -}}"
+              class="block rounded px-4 py-2 {{ if (eq $.RelPermalink $url) }}bg-white dark:bg-black{{end}} hover:bg-white active:bg-white tracking-wide leading-4  dark:hover:bg-black dark:active:bg-black"
+              >{{ .Name }}</a
+            >
+          </li>
+          {{- end -}}
+
+          <li class="inline-block mx-1">
+            <a
+              href="https://github.com/misitebao"
+              class="block rounded mx-3 px-5 py-3 bg-white hover:bg-slate-50 tracking-wide leading-4 dark:bg-black dark:hover:bg-gray-900"
+              >{{ i18n "followme"}}</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

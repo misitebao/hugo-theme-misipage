@@ -1,0 +1,5 @@
+[followme]
+other = "Follow"
+
+[power-by]
+other = 'Powered by <a href="https://gohugo.io/" title="Hugo">Hugo</a> | Using the <a href="https://github.com/misitebao/hugo-theme-misipage" title="MisiPage">MisiPage</a> theme'

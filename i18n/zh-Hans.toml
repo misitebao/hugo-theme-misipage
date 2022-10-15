@@ -1,0 +1,5 @@
+[followme]
+other = "关注我"
+
+[power-by]
+other = '由 <a href="https://gohugo.io/" title="Hugo">Hugo</a> 强力驱动 | 使用 <a href="https://github.com/misitebao/hugo-theme-misipage" title="MisiPage">MisiPage</a> 主题'

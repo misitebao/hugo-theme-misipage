@@ -1,0 +1,25 @@
+{{ define "head" }}
+<script type="module" crossorigin src="/assets/links.js"></script>
+<link rel="modulepreload" crossorigin href="/assets/theme.js">
+<link rel="stylesheet" href="/assets/links.css">
+
+{{ end }} 
+{{ define "main" }}
+<main class="py-24">
+  <div class="container mx-auto px-2.5 lg:px-5 lg:max-w-screen-lg">
+    <div
+      class="flex flex-nowrap items-center justify-center mx-auto h-28 text-6xl"
+      x-on:click="change(theme==='light'?'dark':'light')"
+    >
+      {{ .Title }}
+    </div>
+
+    <article class="mx-auto my-16 max-w-none prose prose-lg dark:prose-invert">
+      {{.Content}} 
+    </article>
+
+    <!-- Comments -->
+    <div id="giscus" class="giscus"></div>
+  </div>
+</main>
+{{ end }}
