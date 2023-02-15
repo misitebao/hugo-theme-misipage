@@ -1,0 +1,7 @@
+{
+  "framework": "hugo",
+  "devCommand": "hugo server -D",
+  "buildCommand": "mkdir ../hugo-theme-misipage && mv -fv * ../hugo-theme-misipage && cd ../hugo-theme-misipage/exampleSite && hugo && pwd && ls public -a",
+  "outputDirectory": "../hugo-theme-misipage/exampleSite/public",
+  "public": true
+}
